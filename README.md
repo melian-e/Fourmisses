@@ -15,3 +15,18 @@ Fonctionnement :
 
  - La Colonie permet de recruter des fourmis, on y apporte la nourriture. Les traces partent d'ici.
  - Une Trace est une boucle qui part de la colonie et y revient et elle perd de la puissance avec le temps. Les ouvrières peuvent la prolonger s'il y a de la nourriture à proximité.
+ 
+class pos
+	-> class vecteur
+		-> class fourmi
+			-> class Ouvrière
+			-> class Guerrière
+			-> class Exploratrice
+		-> class trace
+	-> class colonie
+class main
+class turn
+class player
+
+controleur
+modèle vue controleur
