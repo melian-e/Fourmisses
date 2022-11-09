@@ -1,9 +1,9 @@
 package fourmisses;
 
-public class worker extends ant{
+public class Worker extends Ant{
 	int stock;
 	
-	Boolean gather(food Food) {
+	Boolean gather(Food Food) {
 		this.stock += Food.decrease();
 		
 		this.returnToTrack();
@@ -11,7 +11,7 @@ public class worker extends ant{
 		return true;
 	}
 	
-	int dropFood(colony Colony) {
+	int dropFood(Colony Colony) {
 		int tmp = this.stock;
 		this.stock = 0;
 		

@@ -1,5 +1,5 @@
 package fourmisses;
 
-public class obstacle extends pos{
+public class Obstacle extends Pos{
 	//nourriture colony et cailloux
 }

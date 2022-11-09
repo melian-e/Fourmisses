@@ -1,6 +1,6 @@
 package fourmisses;
 
-abstract public class vector extends pos{
+abstract public class Vector extends Pos{
 
 	int speedX;
 	int speedY;

@@ -1,6 +1,6 @@
 package fourmisses;
 
-public class track extends vector{
+public class Track extends Vector{
 	
 	//au moment de l'initialisation va etre un vecteur avec une norme et direction
 	
@@ -15,7 +15,7 @@ public class track extends vector{
 	
 	//fonction qui réactualise la valeur de "decomposition"
 	//sera appelée chaque tour
-	public void decompo (track track) {
+	public void decompo (Track track) {
 		track.decomposition -= 1; //1 est une valeur arbitraire pour l'instant / sujet à changement
 	}
 	

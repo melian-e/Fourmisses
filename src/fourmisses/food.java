@@ -1,6 +1,7 @@
+
 package fourmisses;
 
-public class food extends obstacle{
+public class Food extends Obstacle{
 
 	int stock;
 	int decreaseValue = 20;

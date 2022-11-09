@@ -1,6 +1,6 @@
 package fourmisses;
 
-public class warrior extends ant{
+public class Warrior extends Ant{
 	Boolean isFighting = false;
 	int targetFlagX;
 	int targetFlagY;

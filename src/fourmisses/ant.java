@@ -1,6 +1,6 @@
 package fourmisses;
 
-public class ant extends vector{
+public class Ant extends Vector{
 	Boolean onTrack = false;
 	
 	int lastTrackX;
