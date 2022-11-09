@@ -1,6 +1,8 @@
 package fourmisses;
 
 public class Player {
+
+
 	int globalFood;
 	
 	int nbAntType = 3;	// Worker = 1  (id 0) / Warrior = 2 (id 1) / Explorer = 3 (id 2) 
@@ -11,6 +13,19 @@ public class Player {
 	int[][] tabAnt = new int[nbAntType - 1][];	//tableau qui contient toutes les fourmis
 	
 	
+	/////CONSTRUCTOR/////
+	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer, int[][] tabAnt) {
+		super();
+		this.globalFood = globalFood;
+		this.nbAntType = nbAntType;
+		this.nbWarrior = nbWarrior;
+		this.nbWorker = nbWorker;
+		this.nbExplorer = nbExplorer;
+		this.tabAnt = tabAnt;
+	}
+	
+	
+	/////METHODS/////
 	/**
 	 * @return the globalFood
 	 */
