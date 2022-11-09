@@ -4,7 +4,7 @@ public class Player {
 
 
 	int globalFood;
-	
+	Colony colony;
 	int nbAntType = 3;	// Worker = 1  (id 0) / Warrior = 2 (id 1) / Explorer = 3 (id 2) 
 	
 	int nbWarrior; // nombre de guerrieres
@@ -14,7 +14,7 @@ public class Player {
 	
 	
 	/////CONSTRUCTOR/////
-	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer, int[][] tabAnt) {
+	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer, int[][] tabAnt,int xcolony, int ycolony) {
 		super();
 		this.globalFood = globalFood;
 		this.nbAntType = nbAntType;
@@ -22,6 +22,7 @@ public class Player {
 		this.nbWorker = nbWorker;
 		this.nbExplorer = nbExplorer;
 		this.tabAnt = tabAnt;
+		this.colony = new Colony(xcolony, ycolony);
 	}
 	
 	
