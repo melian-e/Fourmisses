@@ -7,7 +7,7 @@ public class Ant extends Vector{
 	int lastTrackY;
 	int lastTrackVecX;
 	int lastTrackVecY;
-	
+	int id;
 	int health = 100;
 	int food = 100;
 	
