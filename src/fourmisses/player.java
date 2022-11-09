@@ -14,7 +14,7 @@ public class Player {
 	
 	
 	/////CONSTRUCTOR/////
-	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer, int[][] tabAnt,int xcolony, int ycolony) {
+	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer,int xcolony, int ycolony) {
 		super();
 		this.globalFood = globalFood;
 		this.nbAntType = nbAntType;
