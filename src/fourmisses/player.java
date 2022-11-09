@@ -1,6 +1,6 @@
 package fourmisses;
 
-public class player {
+public class Player {
 	int globalFood;
 	
 	int nbAntType = 3;	// Worker = 1  (id 0) / Warrior = 2 (id 1) / Explorer = 3 (id 2) 
@@ -86,23 +86,20 @@ public class player {
 	/**
 	 * @param tabAnt the tabAnt to set
 	 */
-	public int[][] settabAnt(int[][] tabAnt, antType, nb ) {
+	public int[][] settabAnt(int[][] tabAnt, int antType,int nb ) {
 		switch(antType) {
 		case 0 :
 			this.tabAnt[0][nbWarrior] = tabAnt[0][nb];
-			break;
-			return tabAnt;
-			
+			return tabAnt;			
 		case 1 :
 			this.tabAnt[0][nbWorker] = tabAnt[0][nb];
-			break;
 			return tabAnt;
 			
 		case 2 : 
 			this.tabAnt[2][nbExplorer] = tabAnt[2][nb];
-			break;
 			return tabAnt;
-		} 
+		}
+		return tabAnt;
 		
 	}
 	

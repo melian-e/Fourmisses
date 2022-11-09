@@ -1,6 +1,6 @@
 package fourmisses;
 
-public class controler {
+public class Controler {
 	//initialisation  obstacles, nourriture, class player
 
 	Player player1;
