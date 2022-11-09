@@ -21,7 +21,6 @@ public class Player {
 		this.nbWarrior = nbWarrior;
 		this.nbWorker = nbWorker;
 		this.nbExplorer = nbExplorer;
-		this.tabAnt = tabAnt;
 		this.colony = new Colony(xcolony, ycolony);
 	}
 	
