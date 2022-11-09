@@ -2,8 +2,33 @@ package fourmisses;
 
 abstract public class Colony extends Obstacle{
 
-	//fonctions à implémenter
-	//      formation de fourmis par exemple
 	
-	int health;
+	int health = 5000;
+	
+	/////CONSTRUCTORS/////
+	public Colony(int health) {
+		super();
+		this.health = health;
+	}
+
+	
+	/////METHODS////
+	/**
+	 * @return the health
+	 */
+	public int getHealth() {
+		return health;
+	}
+
+	/**
+	 * @param health the health to set
+	 */
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
+	//fonctions à implémenter
+		//      formation de fourmis par exemple
+	
+	
 }
