@@ -5,6 +5,14 @@ abstract public class Vector extends Pos{
 	int speedX;
 	int speedY;
 	
+	/////CONSTRUCTOR/////
+	public Vector(int x, int y, int speedX, int speedY) {
+		super(x, y);
+		this.speedX = speedX;
+		this.speedY = speedY;
+	}
+	
+	/////METHODS/////
 	public int getSpeedX() {
 		return speedX;
 	}

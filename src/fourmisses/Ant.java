@@ -1,6 +1,8 @@
 package fourmisses;
 
 public class Ant extends Vector{
+	
+
 	Boolean onTrack = false;
 	
 	int lastTrackX;
@@ -10,6 +12,22 @@ public class Ant extends Vector{
 	int id;
 	int health = 100;
 	int food = 100;
+	
+	/////CONSTRUCTOR/////
+	public Ant(int x, int y, int speedX, int speedY, Boolean onTrack, int lastTrackX, int lastTrackY, int lastTrackVecX,
+			int lastTrackVecY, int id, int health, int food) {
+		super(x, y, speedX, speedY);
+		this.onTrack = onTrack;
+		this.lastTrackX = lastTrackX;
+		this.lastTrackY = lastTrackY;
+		this.lastTrackVecX = lastTrackVecX;
+		this.lastTrackVecY = lastTrackVecY;
+		this.id = id;
+		this.health = health;
+		this.food = food;
+	}
+	
+	
 	
 	Boolean consumeFood() {
 		if(this.food > 0) {
