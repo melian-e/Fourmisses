@@ -21,19 +21,19 @@ public class Model {
 		int totalObstacle = 30;
 		
 		//création coordonnées colony, obstacle et bouffe
-		double coordColony1[] = {40,40};
-		List<double[]> tabCoordsObstacle = new ArrayList<double[]>();
+		int coordColony1[] = {40,40};
+		List<int[]> tabCoordsObstacle = new ArrayList<int[]>();
 		for(int i = 0; i<totalObstacle/2; i++) {
-			double randomx = Math.random()*gameHeightWidth[0];
-			double randomy = Math.random()*gameHeightWidth[1];
-			double tmp[] = {randomx,randomy};
+			int randomx = (int)(Math.random()*gameHeightWidth[0]);
+			int randomy = (int)(Math.random()*gameHeightWidth[1]);
+			int tmp[] = {randomx,randomy};
 			tabCoordsObstacle.add(tmp);
 		}
 		
 		//symétrie
-		double coordColony2[] = {gameHeightWidth[0] - coordColony1[0], gameHeightWidth[1] - coordColony1[1]};
+		int coordColony2[] = {gameHeightWidth[0] - coordColony1[0], gameHeightWidth[1] - coordColony1[1]};
 		for(int i = 0; i<totalObstacle/2; i++) {
-			double[] tmp = tabCoordsObstacle.get(i);
+			int[] tmp = tabCoordsObstacle.get(i);
 			tmp[0] = gameHeightWidth[0] - tmp[0];
 			tmp[1] = gameHeightWidth[1] - tmp[1];
 			tabCoordsObstacle.add(tmp);

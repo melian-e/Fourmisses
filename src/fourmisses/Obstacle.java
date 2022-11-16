@@ -4,8 +4,8 @@ public class Obstacle extends Pos{
 	//nourriture colony et cailloux
 	
 	/////CONSTRUCTOR/////
-	public Obstacle() {
-		super();
+	public Obstacle(int x,int y) {
+		super(x,y);
 	}
 	
 }

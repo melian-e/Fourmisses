@@ -7,14 +7,14 @@ public class Ant extends Vector{
 	
 	int lastTrackX;
 	int lastTrackY;
-	int lastTrackVecX;
-	int lastTrackVecY;
+	double lastTrackVecX;
+	double lastTrackVecY;
 	int id;
 	int health = 100;
 	int food = 100;
 	
 	/////CONSTRUCTOR/////
-	public Ant(int x, int y, int speedX, int speedY, Boolean onTrack, int lastTrackX, int lastTrackY, int lastTrackVecX,
+	public Ant(int x, int y, double speedX, double speedY, Boolean onTrack, int lastTrackX, int lastTrackY, int lastTrackVecX,
 			int lastTrackVecY, int id, int health, int food) {
 		super(x, y, speedX, speedY);
 		this.onTrack = onTrack;
@@ -44,11 +44,11 @@ public class Ant extends Vector{
 		this.lastTrackX = this.x;
 		this.lastTrackY = this.y;
 		
-		int nextX = this.x + this.lastTrackVecX;
-		int nextY = this.y + this.lastTrackVecY;
+		int nextX = (int)(this.x + this.lastTrackVecX);
+		int nextY = (int)(this.y + this.lastTrackVecY);
 		
-		this.speedX = this.lastTrackVecX;
-		this.speedY = this.lastTrackVecY;
+		this.vecX = this.lastTrackVecX;
+		this.vecY = this.lastTrackVecY;
 		
 		return true;
 	}
@@ -64,8 +64,8 @@ public class Ant extends Vector{
 		
 		double angle = Math.atan(diffX/diffY);
 		
-		this.speedX = (int)(10 * Math.sin(angle)); 
-		this.speedY = (int)(10 * Math.cos(angle)); 
+		this.vecX = (int)(10 * Math.sin(angle)); 
+		this.vecY = (int)(10 * Math.cos(angle)); 
 		
 		return true;
 	}

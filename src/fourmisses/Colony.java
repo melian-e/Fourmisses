@@ -1,15 +1,13 @@
 package fourmisses;
 
-abstract public class Colony extends Obstacle{
+public class Colony extends Obstacle{
 
 	
 	int health = 5000;
 	
 	/////CONSTRUCTOR/////
 	public Colony(int x, int y, int health) {
-		super();
-		this.x = x;
-		this.y = y;
+		super(x,y);
 		this.health = health;
 	}
 
