@@ -23,7 +23,6 @@ public class Worker extends Ant{
 	int dropFood(Colony Colony) {
 		int tmp = this.stock;
 		this.stock = 0;
-		System.out.println('test');
 		
 		return tmp;
 	}
