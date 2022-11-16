@@ -6,9 +6,10 @@ abstract public class Colony extends Obstacle{
 	int health = 5000;
 	
 	/////CONSTRUCTOR/////
-	public Colony(int health) {
+	public Colony(int x, int y) {
 		super();
-		this.health = health;
+		this.x = x;
+		this.y = y;
 	}
 
 	
