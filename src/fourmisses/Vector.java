@@ -2,27 +2,27 @@ package fourmisses;
 
 abstract public class Vector extends Pos{
 
-	int speedX;
-	int speedY;
+	double speedX;
+	double speedY;
 	
 	/////CONSTRUCTOR/////
-	public Vector(int x, int y, int speedX, int speedY) {
+	public Vector(double x, double y, double speedX, double speedY) {
 		super(x, y);
 		this.speedX = speedX;
 		this.speedY = speedY;
 	}
 	
 	/////METHODS/////
-	public int getSpeedX() {
+	public double getSpeedX() {
 		return speedX;
 	}
-	public void setSpeedX(int speedX) {
+	public void setSpeedX(double speedX) {
 		this.speedX = speedX;
 	}
-	public int getSpeedY() {
+	public double getSpeedY() {
 		return speedY;
 	}
-	public void setSpeedY(int speedY) {
+	public void setSpeedY(double speedY) {
 		this.speedY = speedY;
 	}
 	

@@ -3,7 +3,7 @@ package fourmisses;
 public class Track extends Vector{
 	
 	//au moment de l'initialisation va etre un vecteur avec une norme et direction
-	
+
 	//deux types de track
 	// 0 pour nourriture
 	// 1 pour ennemi
@@ -13,6 +13,13 @@ public class Track extends Vector{
 	//quand decomposition vaut 0 la trace est détruite
 	int decomposition;
 	
+	
+	/////CONSTRUCTOR/////
+	public Track(int x, int y, int speedX, int speedY, boolean type, int decomposition) {
+		super(x, y, speedX, speedY);
+		this.type = type;
+		this.decomposition = decomposition;
+	}
 	//fonction qui réactualise la valeur de "decomposition"
 	//sera appelée chaque tour
 	public void decompo (Track track) {
