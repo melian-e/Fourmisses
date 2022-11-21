@@ -8,5 +8,8 @@ public class Explorer extends Ant{
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	Explorer(){
+        super(0,0,1,1,false,2,2,3,2,4,100,100);
+    }
+
 }
