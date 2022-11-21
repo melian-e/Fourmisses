@@ -1,6 +1,6 @@
 package fourmisses;
 
-abstract public class Pos {
+public class Pos {
 
 	int x;
 	int y;

@@ -1,6 +1,6 @@
 package fourmisses;
 
-abstract public class Vector extends Pos{
+public class Vector extends Pos{
 
 	double vecX;
 	double vecY;
