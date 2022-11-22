@@ -27,8 +27,6 @@ public class Ant extends Vector {
 		this.food = food;
 	}
 	
-	
-	
 	Boolean consumeFood() {
 		if(this.food > 0) {
 			this.food -= 1;
@@ -54,8 +52,7 @@ public class Ant extends Vector {
 	}
 	
 	Boolean isOnTrack() {
-		
-		return true;
+		return this.onTrack;
 	}
 	
 	Boolean returnToTrack() { // " si le retour à la trace marche pas, c'est ICI que ça bloque " - Iemelian 02/11/2022 11:50

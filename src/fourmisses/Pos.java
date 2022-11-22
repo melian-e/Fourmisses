@@ -1,6 +1,6 @@
 package fourmisses;
 
-public class Pos {
+public abstract class Pos {
 
 	int x;
 	int y;
@@ -25,6 +25,10 @@ public class Pos {
 	}
 	public void setY(int y) {
 		this.y = y;
+	}
+	public double dist(Pos obj) {
+		
+		return x;
 	}
 
 	

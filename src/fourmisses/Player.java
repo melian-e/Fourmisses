@@ -10,7 +10,7 @@ public class Player {
 	int nbWarrior; // nombre de guerrieres
 	int nbWorker;	// nombre d'ouvrières
 	int nbExplorer;	// nombre d'exploratrices
-	int[][] tabAnt = new int[nbAntType - 1][];	//tableau qui contient toutes les fourmis
+	Ant[][] tabAnt = new Ant[nbAntType - 1][];	//tableau qui contient toutes les fourmis
 	
 	
 	/////CONSTRUCTOR/////
@@ -93,7 +93,7 @@ public class Player {
 	/**
 	 * @return the tabAnt
 	 */
-	public int[][] gettabAnt() {
+	public Ant[][] gettabAnt() {
 		return tabAnt;
 	}
 	
@@ -101,21 +101,8 @@ public class Player {
 	/**
 	 * @param tabAnt the tabAnt to set
 	 */
-	public int[][] settabAnt(int[][] tabAnt, int antType,int nb ) {
-		switch(antType) {
-		case 0 :
-			this.tabAnt[0][nbWarrior] = tabAnt[0][nb];
-			return tabAnt;			
-		case 1 :
-			this.tabAnt[0][nbWorker] = tabAnt[0][nb];
-			return tabAnt;
-			
-		case 2 : 
-			this.tabAnt[2][nbExplorer] = tabAnt[2][nb];
-			return tabAnt;
-		}
-		return tabAnt;
-		
+	public void settabAnt(Ant[][] tabAnt) {
+		this.tabAnt = tabAnt;
 	}
 	
 	
@@ -124,6 +111,11 @@ public class Player {
 	 */
 	public int getnbAntType() {
 		return nbAntType;
+	}
+
+
+	public Colony getColony() {
+		return colony;
 	}
 	
 	
