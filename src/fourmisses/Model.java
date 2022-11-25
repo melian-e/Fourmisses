@@ -102,18 +102,14 @@ public class Model {
 	}
 	
 	void nextIteration() {
-		//calcul de la décomposition total
-		List<ArrayList<Track>> tabTracks = player1.getTabTracks();
-		
 		//calcul prochaine pos fourmis
-		Ant[][] tabAnt = this.player1.gettabAnt();
-		for(int i = 0; i < 3; i++) {
-
-		}
-		this.player1.settabAnt(tabAnt);
+		player1.dispatchWorker();
+		
 		//calcul prochaine pos fourmis player2
+		player2.dispatchWorker();
 		
 		//
+
 	}
 	
 	void updateView() {

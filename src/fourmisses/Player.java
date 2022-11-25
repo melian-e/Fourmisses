@@ -13,7 +13,9 @@ public class Player {
 	int nbWarrior; // nombre de guerrieres
 	int nbWorker;	// nombre d'ouvrières
 	int nbExplorer;	// nombre d'exploratrices
-	Ant[][] tabAnt = new Ant[nbAntType][];	//tableau qui contient toutes les fourmis
+	
+	List<double[]> tabCoordsObstacle = new ArrayList<double[]>();
+	List<ArrayList<Ant>> tabAnt = new ArrayList<ArrayList<Ant>>();	//tableau qui contient toutes les fourmis
 	List<ArrayList<Track>> tabTracks = new ArrayList<ArrayList<Track>>();
 	List<Integer> tabWorkerOnTracks = new ArrayList<Integer>();
 	int decompoTrackTot = 0;
@@ -98,7 +100,7 @@ public class Player {
 	/**
 	 * @return the tabAnt
 	 */
-	public Ant[][] gettabAnt() {
+	public List<ArrayList<Ant>> gettabAnt() {
 		return tabAnt;
 	}
 	
@@ -106,7 +108,7 @@ public class Player {
 	/**
 	 * @param tabAnt the tabAnt to set
 	 */
-	public void settabAnt(Ant[][] tabAnt) {
+	public void settabAnt(List<ArrayList<Ant>> tabAnt) {
 		this.tabAnt = tabAnt;
 	}
 	
@@ -142,20 +144,23 @@ public class Player {
 	}
 	
 	public void dispatchWorker() {
-		for(int j = 0; j < tabAnt[0].length; j++) {
-			Ant ant = tabAnt[0][j];
+		for(int j = 0; j < tabAnt.get(0).size(); j++) {
+			Ant ant = tabAnt.get(0).get(j);
 			if(ant.isOnTrack()) {
 				if(true) {
 					ant.followTrack();										
 				}
 			}
 			else {
-				if(tabTracks.size() > 1) {
-					
+				double min = (tabWorkerOnTracks.get(0)/tabAnt.get(0).size())-(tabTracks.get(0).get(0).getDecompo()/decompoTrackTot);
+				int IDMin = 0;
+				for(int i = 1; i < tabTracks.size(); i++) {
+					if((tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot)<min) {
+						min = (tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot);
+						IDMin = i;
+					}
 				}
-				else if(tabTracks.size() == 1) {
-					
-				}
+				ant.startTrack(tabTracks.get(IDMin));					
 			}
 		}
 	}

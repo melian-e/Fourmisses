@@ -1,12 +1,15 @@
 package fourmisses;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Ant extends Vector {
 	
 
 	Boolean onTrack = false;
 	
 	int IDOnTrack;
-	Track[] currentTrack;
+	ArrayList<Track> currentTrack;
 	int id;
 	int health = 100;
 	int food = 100;
@@ -38,22 +41,18 @@ public class Ant extends Vector {
 		return true;
 	}
 	
-	Boolean addOnTrack() {
-		return true;
-	}
-	
 	Boolean isOnTrack() {
 		return this.onTrack;
 	}
 	
-	void startTrack(Track track[]) {
+	void startTrack(ArrayList<Track> track) {
 		this.currentTrack = track;
 		this.IDOnTrack = 0;
 	}
 	
 	Boolean returnToTrack() { // " si le retour à la trace marche pas, c'est ICI que ça bloque " - Iemelian 02/11/2022 11:50
-		int diffX = (int) (this.currentTrack[IDOnTrack].getX() - this.x);
-		int diffY = (int) (this.currentTrack[IDOnTrack].getY() - this.y);
+		int diffX = (int) (this.currentTrack.get(IDOnTrack).getX() - this.x);
+		int diffY = (int) (this.currentTrack.get(IDOnTrack).getY() - this.y);
 		
 		double angle = Math.atan(diffX/diffY);
 		
