@@ -22,8 +22,12 @@ public class Track extends Vector{
 	}
 	//fonction qui réactualise la valeur de "decomposition"
 	//sera appelée chaque tour
-	public void decompo (Track track) {
+	public void decompose (Track track) {
 		track.decomposition -= 1; //1 est une valeur arbitraire pour l'instant / sujet à changement
+	}
+	
+	public int getDecompo () {
+		return this.decomposition; //1 est une valeur arbitraire pour l'instant / sujet à changement
 	}
 	
 	//public void decompo (track tracks[]) {

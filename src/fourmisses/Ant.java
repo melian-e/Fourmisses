@@ -5,10 +5,8 @@ public class Ant extends Vector {
 
 	Boolean onTrack = false;
 	
-	int lastTrackX;
-	int lastTrackY;
-	double lastTrackVecX;
-	double lastTrackVecY;
+	int IDOnTrack;
+	Track[] currentTrack;
 	int id;
 	int health = 100;
 	int food = 100;
@@ -18,10 +16,7 @@ public class Ant extends Vector {
 			int lastTrackVecY, int id, int health, int food) {
 		super(x, y, speedX, speedY);
 		this.onTrack = onTrack;
-		this.lastTrackX = lastTrackX;
-		this.lastTrackY = lastTrackY;
-		this.lastTrackVecX = lastTrackVecX;
-		this.lastTrackVecY = lastTrackVecY;
+		
 		this.id = id;
 		this.health = health;
 		this.food = food;
@@ -39,15 +34,11 @@ public class Ant extends Vector {
 	}
 	
 	Boolean followTrack() {
-		this.lastTrackX = this.x;
-		this.lastTrackY = this.y;
 		
-		int nextX = (int)(this.x + this.lastTrackVecX);
-		int nextY = (int)(this.y + this.lastTrackVecY);
-		
-		this.vecX = this.lastTrackVecX;
-		this.vecY = this.lastTrackVecY;
-		
+		return true;
+	}
+	
+	Boolean addOnTrack() {
 		return true;
 	}
 	
@@ -55,14 +46,19 @@ public class Ant extends Vector {
 		return this.onTrack;
 	}
 	
+	void startTrack(Track track[]) {
+		this.currentTrack = track;
+		this.IDOnTrack = 0;
+	}
+	
 	Boolean returnToTrack() { // " si le retour à la trace marche pas, c'est ICI que ça bloque " - Iemelian 02/11/2022 11:50
-		int diffX = this.lastTrackX - this.x;
-		int diffY = this.lastTrackY - this.y;
+		int diffX = (int) (this.currentTrack[IDOnTrack].getX() - this.x);
+		int diffY = (int) (this.currentTrack[IDOnTrack].getY() - this.y);
 		
 		double angle = Math.atan(diffX/diffY);
 		
-		this.vecX = (int)(10 * Math.sin(angle)); 
-		this.vecY = (int)(10 * Math.cos(angle)); 
+		this.vecX = 10 * Math.sin(angle);
+		this.vecY = 10 * Math.cos(angle);
 		
 		return true;
 	}

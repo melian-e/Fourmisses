@@ -2,11 +2,11 @@ package fourmisses;
 
 public abstract class Pos {
 
-	int x;
-	int y;
+	double x;
+	double y;
 	
 	/////CONSTRUCTOR/////
-	public Pos(int x, int y) {
+	public Pos(double x, double y) {
 		super();
 		this.x = x;
 		this.y = y;
@@ -14,16 +14,16 @@ public abstract class Pos {
 	
 	
 	/////METHODS/////
-	public int getX() {
+	public double getX() {
 		return x;
 	}
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
-	public int getY() {
+	public double getY() {
 		return y;
 	}
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 	public double dist(Pos obj) {

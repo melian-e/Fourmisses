@@ -1,5 +1,8 @@
 package fourmisses;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 
 
@@ -10,18 +13,20 @@ public class Player {
 	int nbWarrior; // nombre de guerrieres
 	int nbWorker;	// nombre d'ouvrières
 	int nbExplorer;	// nombre d'exploratrices
-	Ant[][] tabAnt = new Ant[nbAntType - 1][];	//tableau qui contient toutes les fourmis
-	
+	Ant[][] tabAnt = new Ant[nbAntType][];	//tableau qui contient toutes les fourmis
+	List<ArrayList<Track>> tabTracks = new ArrayList<ArrayList<Track>>();
+	List<Integer> tabWorkerOnTracks = new ArrayList<Integer>();
+	int decompoTrackTot = 0;
 	
 	/////CONSTRUCTOR/////
-	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer,int xcolony, int ycolony) {
+	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer,double coordColony1, double coordColony12) {
 		super();
 		this.globalFood = globalFood;
 		this.nbAntType = nbAntType;
 		this.nbWarrior = nbWarrior;
 		this.nbWorker = nbWorker;
 		this.nbExplorer = nbExplorer;
-		this.colony = new Colony(xcolony, ycolony, 1800);
+		this.colony = new Colony(coordColony1, coordColony12, 1800);
 	}
 	
 	
@@ -117,6 +122,41 @@ public class Player {
 	public Colony getColony() {
 		return colony;
 	}
+
+
+	public List<ArrayList<Track>> getTabTracks() {
+		return tabTracks;
+	}
+
+
+	public void setTabTracks(List<ArrayList<Track>> tabTracks) {
+		this.tabTracks = tabTracks;
+	}
+
+
+	public int getDecompoTrackTot() {
+		for(int j = 0; j < tabTracks.size(); j++) {
+			this.decompoTrackTot += this.tabTracks.get(j).get(0).getDecompo();
+		}
+		return this.decompoTrackTot;
+	}
 	
-	
+	public void dispatchWorker() {
+		for(int j = 0; j < tabAnt[0].length; j++) {
+			Ant ant = tabAnt[0][j];
+			if(ant.isOnTrack()) {
+				if(true) {
+					ant.followTrack();										
+				}
+			}
+			else {
+				if(tabTracks.size() > 1) {
+					
+				}
+				else if(tabTracks.size() == 1) {
+					
+				}
+			}
+		}
+	}
 }

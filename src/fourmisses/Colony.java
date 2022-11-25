@@ -6,8 +6,8 @@ public class Colony extends Obstacle{
 	int health = 5000;
 	
 	/////CONSTRUCTOR/////
-	public Colony(int x, int y, int health) {
-		super(x,y);
+	public Colony(double coordColony1, double coordColony12, int health) {
+		super(coordColony1,coordColony12);
 		this.health = health;
 	}
 
