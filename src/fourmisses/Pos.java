@@ -28,7 +28,29 @@ public abstract class Pos {
 	}
 	public double dist(Pos obj) {
 		
-		return x;
+		double A;
+		double B;
+		double hypo;
+		double dist;
+		
+		if(this.x >= obj.x) {
+			A = this.x - obj.x;
+		}
+		else {
+			A = obj.x - this.x;
+		}
+		
+		if(this.y >= obj.y) {
+			B = this.y - obj.y;
+		}
+		else {
+			B = obj.y - this.y;
+		}
+		
+		hypo = Math.pow(A, 2) + Math.pow(B, 2);
+		dist = Math.sqrt(hypo);
+		
+		return dist;
 	}
 
 	
