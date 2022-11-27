@@ -121,7 +121,7 @@ public class Model {
 
 	}
 	
-	void updateView() {
+	void updateView(View view) {
 		
 		//envoie des coords des obstacles
 		List<double[]> tabCoordsObstacle = new ArrayList<double[]>();
@@ -143,7 +143,6 @@ public class Model {
 			tabCoordsFood.add(tmp);
 		}
 		
-	
 		for(int i = 0; i<tabObstacle.size(); i++) {
 			System.out.print(tabCoordsObstacle.get(i)[0]);
 			System.out.print(" ");
