@@ -1,6 +1,6 @@
-package fourmisses;
+package com.fourmisses.fourmies;
 
-public class Colony extends Obstacle{
+public class Colony extends Obstacle {
 
 	
 	int health = 5000;

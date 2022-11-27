@@ -1,4 +1,4 @@
-package fourmisses;
+package com.fourmisses.fourmies;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public class Model {
 	Player player1;
 	Player player2;
-	int[] gameHeightWidth = new int[2];
+	double[] gameHeightWidth = new double[2];
 	List<Obstacle> tabObstacle = new ArrayList<Obstacle>();
 	List<Food> tabFood = new ArrayList<Food>();
 	int decompoTrackTot;
@@ -15,7 +15,7 @@ public class Model {
 	
 	
 	/*initialisation  obstacles, nourriture, class player*/	
-	public Model(int Height, int Width) {
+	public Model(double Height, double Width) {
 		// initialisation : les variables seront calculées par des méthodes auparavant (symétrie notamment)
 		this.gameHeightWidth[0] = Height;
 		this.gameHeightWidth[1] = Width;
@@ -121,17 +121,14 @@ public class Model {
 
 	}
 	
-	void updateView(View view) {
-		
-		//envoie des coords des obstacles
-		List<double[]> tabCoordsObstacle = new ArrayList<double[]>();
-		for(int i = 0; i<tabObstacle.size(); i++) {
-			double tmpx = this.tabObstacle.get(i).getX();
-			double tmpy = this.tabObstacle.get(i).getY();
-			double tmp[] = {tmpx,tmpy};
-			
-			tabCoordsObstacle.add(tmp);
-		}
+	List<double[]>[] updateView(View view) {
+		//envoie des coords des fourmis rouges
+		List<double[]> tabCoordsRouge = new ArrayList<double[]>();
+
+		//envoie des coords des fourmis bleues
+		List<double[]> tabCoordsBleu = new ArrayList<double[]>();
+
+
 		//envoie des coords de la bouffe et la quantité
 		List<double[]> tabCoordsFood = new ArrayList<double[]>();
 		for(int i = 0; i<tabFood.size(); i++) {
@@ -139,15 +136,33 @@ public class Model {
 			double tmpy = this.tabFood.get(i).getY();
 			double purcentage = (this.tabFood.get(i).getStock()/stockFoodInit)*100;
 			double tmp[] = {tmpx,tmpy,purcentage};
-			
+
 			tabCoordsFood.add(tmp);
 		}
-		
+
+		//envoie des coords des obstacles
+		List<double[]> tabCoordsObstacles = new ArrayList<double[]>();
 		for(int i = 0; i<tabObstacle.size(); i++) {
-			System.out.print(tabCoordsObstacle.get(i)[0]);
-			System.out.print(" ");
-			System.out.print(tabCoordsObstacle.get(i)[1]);
-			System.out.print("\n");
+			double tmpx = this.tabObstacle.get(i).getX();
+			double tmpy = this.tabObstacle.get(i).getY();
+			double tmp[] = {tmpx,tmpy};
+			
+			tabCoordsObstacles.add(tmp);
 		}
+		
+//		for(int i = 0; i<tabObstacle.size(); i++) {
+//			System.out.print(tabCoordsObstacle.get(i)[0]);
+//			System.out.print(" ");
+//			System.out.print(tabCoordsObstacle.get(i)[1]);
+//			System.out.print("\n");
+//		}
+		//return tabCoordsRouge, tabCoordsBleues, tabCoordsFood, tabCoordsObstacles
+		List<double[]>[] data = new List[4];
+		data[0] = tabCoordsRouge;
+		data[1] = tabCoordsBleu;
+		data[2] = tabCoordsFood;
+		data[3] = tabCoordsObstacles;
+//		view.displayEverything(tabCoordsBleu, tabCoordsRouge, tabCoordsFood, tabCoordsObstacles);
+		return data;
 	}
 }

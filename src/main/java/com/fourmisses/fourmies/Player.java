@@ -1,4 +1,4 @@
-package fourmisses;
+package com.fourmisses.fourmies;
 
 import java.util.ArrayList;
 import java.util.List;

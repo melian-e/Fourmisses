@@ -1,5 +1,4 @@
-
-package fourmisses;
+package com.fourmisses.fourmies;
 
 public class Food extends Obstacle{
 

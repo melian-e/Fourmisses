@@ -1,4 +1,4 @@
-package fourmisses;
+package com.fourmisses.fourmies;
 
 public abstract class Vector extends Pos{
 
