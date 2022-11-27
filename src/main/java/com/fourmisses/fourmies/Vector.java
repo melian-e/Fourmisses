@@ -1,22 +1,30 @@
-package com.fourmisses.fourmies;
+package fourmisses;
 
-abstract public class Vector extends Pos{
+public abstract class Vector extends Pos{
 
-    int speedX;
-    int speedY;
-
-    public int getSpeedX() {
-        return speedX;
-    }
-    public void setSpeedX(int speedX) {
-        this.speedX = speedX;
-    }
-    public int getSpeedY() {
-        return speedY;
-    }
-    public void setSpeedY(int speedY) {
-        this.speedY = speedY;
-    }
-
-
+	double vecX;
+	double vecY;
+	
+	/////CONSTRUCTOR/////
+	public Vector(int x, int y, double vecX, double vecY) {
+		super(x, y);
+		this.vecX = vecX;
+		this.vecY = vecY;
+	}
+	
+	/////METHODS/////
+	public double getVecX() {
+		return vecX;
+	}
+	public void setVecX(double vecX) {
+		this.vecX = vecX;
+	}
+	public double getVecY() {
+		return vecY;
+	}
+	public void setVecY(double vecY) {
+		this.vecY = vecY;
+	}
+	
+	
 }

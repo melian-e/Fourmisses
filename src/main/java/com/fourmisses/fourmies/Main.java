@@ -1,7 +1,11 @@
-package com.fourmisses.fourmies;
+package fourmisses;
 
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("test");
+        Model model = new Model(1000,1000);
+        View view = new View();
+        
+        model.updateView(view);
     }
 }
