@@ -16,6 +16,7 @@ public class Model {
 	
 	/*initialisation  obstacles, nourriture, class player*/	
 	public Model(double Height, double Width) {
+		System.out.println("BOUH");
 		// initialisation : les variables seront calculées par des méthodes auparavant (symétrie notamment)
 		this.gameHeightWidth[0] = Height;
 		this.gameHeightWidth[1] = Width;
@@ -121,7 +122,7 @@ public class Model {
 
 	}
 	
-	List<double[]>[] updateView(View view) {
+	List<double[]>[] updateView() {
 		//envoie des coords des fourmis rouges
 		List<double[]> tabCoordsRouge = new ArrayList<double[]>();
 
@@ -150,19 +151,18 @@ public class Model {
 			tabCoordsObstacles.add(tmp);
 		}
 		
-//		for(int i = 0; i<tabObstacle.size(); i++) {
-//			System.out.print(tabCoordsObstacle.get(i)[0]);
-//			System.out.print(" ");
-//			System.out.print(tabCoordsObstacle.get(i)[1]);
-//			System.out.print("\n");
-//		}
-		//return tabCoordsRouge, tabCoordsBleues, tabCoordsFood, tabCoordsObstacles
+		for(int i = 0; i<tabCoordsFood.size(); i++) {
+			System.out.print(tabCoordsFood.get(i)[0]);
+			System.out.print(" ");
+			System.out.print(tabCoordsFood.get(i)[1]);
+			System.out.print("\n");
+		}
+
 		List<double[]>[] data = new List[4];
 		data[0] = tabCoordsRouge;
 		data[1] = tabCoordsBleu;
 		data[2] = tabCoordsFood;
 		data[3] = tabCoordsObstacles;
-//		view.displayEverything(tabCoordsBleu, tabCoordsRouge, tabCoordsFood, tabCoordsObstacles);
 		return data;
 	}
 }

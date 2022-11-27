@@ -9,7 +9,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class View extends Application {
@@ -19,11 +18,11 @@ public class View extends Application {
     private static final Canvas canvas = new Canvas(screenWidth, screenHeight-75);
     private static final GraphicsContext gc =  canvas.getGraphicsContext2D();
 
-    public double getScreenWidth(){
+    public static double getScreenWidth(){
         return screenWidth;
     }
 
-    public double getScreenHeight(){
+    public static double getScreenHeight(){
         return screenHeight;
     }
 
@@ -31,11 +30,6 @@ public class View extends Application {
     public void start(Stage stage) {
         initUI(stage);
     }
-
-//    private static void initLists() {
-//        bleu.add(new double[]{170.0, 50.0});
-//        rouge.add(new double[]{50.0, 50.0});
-//    }
 
     private void initUI(Stage stage) {
 
@@ -70,8 +64,13 @@ public class View extends Application {
         }
         gc.stroke();
     }
-
     public static void main(String[] args) {
+        View view = new View();
+        Model model = new Model(screenHeight, screenWidth);
+        List<double[]>[] rtrn = model.updateView();
+        displayEverything(rtrn[0], rtrn[1], rtrn[2], rtrn[3]);
         launch(args);
+        System.out.println("test");
+        System.out.println("Starting");
     }
 }
