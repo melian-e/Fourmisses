@@ -3,7 +3,14 @@ package fourmisses;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Model {
+import fourmisses.Food;
+import fourmisses.Obstacle;
+import fourmisses.Player;
+import fourmisses.Track;
+import fourmisses.View;
+import fourmisses.Wall;
+
+public class Model implements Controller{
 	Player player1;
 	Player player2;
 	int[] gameHeightWidth = new int[2];
@@ -121,7 +128,7 @@ public class Model {
 
 	}
 	
-	void updateView(View view) {
+	public void updateView(View view) {
 		
 		//envoie des coords des obstacles
 		List<double[]> tabCoordsObstacle = new ArrayList<double[]>();

@@ -1,4 +1,4 @@
-package com.fourmisses.fourmies;
+package fourmisses;
 
 public class Wall extends Obstacle{
     public Wall(double x, double y) {

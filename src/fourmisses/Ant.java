@@ -3,19 +3,19 @@ package fourmisses;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ant extends Vector {
+abstract class Ant extends Vector {
 	
 
-	Boolean onTrack = false;
+	private Boolean onTrack = false;
 	
-	int IDOnTrack;
-	ArrayList<Track> currentTrack;
-	int id;
-	int health = 100;
-	int food = 100;
+	private int IDOnTrack;
+	private ArrayList<Track> currentTrack;
+	private int id;
+	private int health = 100;
+	private int food = 100;
 	
 	/////CONSTRUCTOR/////
-	public Ant(int x, int y, double speedX, double speedY, Boolean onTrack, int lastTrackX, int lastTrackY, int lastTrackVecX,
+	protected Ant(int x, int y, double speedX, double speedY, Boolean onTrack, int lastTrackX, int lastTrackY, int lastTrackVecX,
 			int lastTrackVecY, int id, int health, int food) {
 		super(x, y, speedX, speedY);
 		this.onTrack = onTrack;
@@ -25,7 +25,7 @@ public class Ant extends Vector {
 		this.food = food;
 	}
 	
-	Boolean consumeFood() {
+	protected Boolean consumeFood() {
 		if(this.food > 0) {
 			this.food -= 1;
 		}
@@ -36,21 +36,21 @@ public class Ant extends Vector {
 		return true;
 	}
 	
-	Boolean followTrack() {
+	protected Boolean followTrack() {
 		
 		return true;
 	}
 	
-	Boolean isOnTrack() {
+	protected Boolean isOnTrack() {
 		return this.onTrack;
 	}
 	
-	void startTrack(ArrayList<Track> track) {
+	protected void startTrack(ArrayList<Track> track) {
 		this.currentTrack = track;
 		this.IDOnTrack = 0;
 	}
 	
-	Boolean returnToTrack() { // " si le retour à la trace marche pas, c'est ICI que ça bloque " - Iemelian 02/11/2022 11:50
+	protected Boolean returnToTrack() { // " si le retour à la trace marche pas, c'est ICI que ça bloque " - Iemelian 02/11/2022 11:50
 		int diffX = (int) (this.currentTrack.get(IDOnTrack).getX() - this.x);
 		int diffY = (int) (this.currentTrack.get(IDOnTrack).getY() - this.y);
 		
