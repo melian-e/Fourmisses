@@ -11,11 +11,7 @@ public class Model {
 	List<Food> tabFood = new ArrayList<Food>();
 	int decompoTrackTot;
 	int stockFoodInit = 300;
-<<<<<<< HEAD
-	int totalObstacleFood = 2;
-=======
 	int totalObstacleFood = 1000;
->>>>>>> a6f31d89a0c884e405fdc33df4583ebadc883491
 	
 	
 	/*initialisation  obstacles, nourriture, class player*/	
@@ -54,11 +50,11 @@ public class Model {
 //		this.tabObstacle.add(player1.getColony());
 //		this.tabObstacle.add(player2.getColony());
 		
-		for(int i = 0; i<tabCoordsObstacle.size()/2; i++) {
+		for(int i = 0; i<tabCoordsObstacle.size(); i+=2) {
 			List<Wall> wall = this.wallCreation(tabCoordsObstacle.get(i)[0],tabCoordsObstacle.get(i)[1]);
 			tabObstacle.addAll(wall);
 		}
-		for(int i = tabCoordsObstacle.size()/2; i<tabCoordsObstacle.size(); i++) {
+		for(int i = 1; i<tabCoordsObstacle.size(); i+=2) {
 			List<Food> food = foodCreation(tabCoordsObstacle.get(i)[0],tabCoordsObstacle.get(i)[1], stockFoodInit);
 			tabFood.addAll(food);
 		}
