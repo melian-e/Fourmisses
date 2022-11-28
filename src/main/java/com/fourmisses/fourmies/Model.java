@@ -170,7 +170,7 @@ public class Model {
 		for(int i = 0; i < this.tabObstacle.size(); i++) {
 			double distObj1 = obj1.dist(this.tabFood.get(i));
 			if(distObj1<10) {
-				pos objTmp = obj1;
+				Vector objTmp = obj1;
 				objTmp.setX(objTmp.getX()+objTmp.getVecX());
 				objTmp.setY(objTmp.getY()+objTmp.getVecY());
 				if(distObj1<obj1.dist(this.tabFood.get(i))) {
