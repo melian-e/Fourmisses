@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eaa9e80-48ef-471c-a5a1-72323e932476" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/View.class" afterDir="false" />
-    </list>
+    <list default="true" id="8eaa9e80-48ef-471c-a5a1-72323e932476" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,5 +57,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
