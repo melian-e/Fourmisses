@@ -11,12 +11,11 @@ public class Model {
 	List<Food> tabFood = new ArrayList<Food>();
 	int decompoTrackTot;
 	int stockFoodInit = 300;
-	int totalObstacleFood = 10;
+	int totalObstacleFood = 1000;
 	
 	
 	/*initialisation  obstacles, nourriture, class player*/	
 	public Model(double Height, double Width) {
-		System.out.println("BOUH");
 		// initialisation : les variables seront calculées par des méthodes auparavant (symétrie notamment)
 		this.gameHeightWidth[0] = Height;
 		this.gameHeightWidth[1] = Width;
@@ -58,7 +57,7 @@ public class Model {
 	}
 	
 	public List<Wall> wallCreation(double x, double y){//créations des obstacles, potentiellement une usine à gaz
-		int radius = (int)(1+Math.random()*2);//largeur max obstacle : 15 
+		int radius = (int)(5+Math.random()*10);//largeur max obstacle : 15
 		List<Wall> tabWall = new ArrayList<Wall>();
 		
 		double xtmp = (Math.cos(0)*Math.sqrt(radius));
@@ -82,7 +81,7 @@ public class Model {
 	}
 	
 	public List<Food> foodCreation(double x, double y, int stockFoodInit){//créations des obstacles, potentiellement une usine à gaz
-		int radius = (int)(1+Math.random()*2);//largeur max obstacle : 15 
+		int radius = (int)(5+Math.random()*10);//largeur max obstacle : 15
 		List<Food> tabFood = new ArrayList<Food>();
 		
 		double xtmp = (Math.cos(0)*Math.sqrt(radius));
