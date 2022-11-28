@@ -54,13 +54,13 @@ public class View extends Application {
             gc.fillRect(coo[1],coo[0], 1, 1);
         }
         gc.setFill(Color.web("rgb(10,25,100)"));
-        gc.fillRect(colonieBleue.get(0)[1]-(20-3), colonieBleue.get(0)[0]-(20-3), 20, 20);
+        gc.fillRect(colonieBleue.get(0)[1]-(20/2-1.5), colonieBleue.get(0)[0]-(20/2-1.5), 20, 20);
         gc.setFill(Color.BLUE);
         for (double[] coo : bleu) {
             gc.fillRect(coo[1], coo[0], 3, 3);
         }
         gc.setFill(Color.web("rgb(95,17,17)"));
-        gc.fillRect(colonieRouge.get(0)[1], colonieRouge.get(0)[0], 20, 20);
+        gc.fillRect(colonieRouge.get(0)[1]-(20/2-1.5), colonieRouge.get(0)[0]-(20/2-1.5), 20, 20);
         gc.setFill(Color.RED);
         for (double[] coo : rouge) {
             gc.fillRect(coo[1], coo[0], 3, 3);
