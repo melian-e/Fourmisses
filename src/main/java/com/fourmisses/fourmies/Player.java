@@ -161,12 +161,12 @@ public class Player {
 		for(int j = 0; j < tabAnt.get(0).size(); j++) {
 			Ant ant = tabAnt.get(0).get(j);
 			if(ant.isOnTrack()) {
-				if(true) {
-					ant.followTrack();										
-				}
+				System.out.println("onTrack");
+				ant.followTrack();
 			}
 			else {
 				if(tabTracks.size()>0){
+					System.out.println("size>0");
 					double min = (tabWorkerOnTracks.get(0)/tabAnt.get(0).size())-(tabTracks.get(0).get(0).getDecompo()/decompoTrackTot);
 					int IDMin = 0;
 					for(int i = 1; i < tabTracks.size(); i++) {
@@ -175,6 +175,7 @@ public class Player {
 							IDMin = i;
 						}
 					}
+
 					ant.startTrack(tabTracks.get(IDMin));
 					int worker = this.tabWorkerOnTracks.get(IDMin);
 					worker++;

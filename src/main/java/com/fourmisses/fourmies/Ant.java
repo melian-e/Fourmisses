@@ -36,8 +36,8 @@ public class Ant extends Vector {
 	}
 	
 	Void followTrack() {
-		this.x += this.currentTrack.get(IDOnTrack).getX();
-		this.y += this.currentTrack.get(IDOnTrack).getY();
+		this.x = this.currentTrack.get(IDOnTrack).getX();
+		this.y = this.currentTrack.get(IDOnTrack).getY();
 
 		if(IDOnTrack < this.currentTrack.size()){
 			IDOnTrack+=1;
@@ -54,6 +54,7 @@ public class Ant extends Vector {
 	}
 	
 	void startTrack(ArrayList<Track> track) {
+		this.onTrack = true;
 		this.currentTrack = track;
 		this.IDOnTrack = 0;
 	}
