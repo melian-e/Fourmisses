@@ -101,14 +101,26 @@ public class Model {
 		return tabFood;
 	}
 	
-	public ArrayList<Track> TrackCreation(int x, int y, int speedX, int speedY, boolean type, int decomposition){
+	public ArrayList<Track> TrackCreation(int x, int y, int speedX, int speedY, boolean type, int decomposition, Explorer explorer){
+		
 		
 		ArrayList<Track> track = new ArrayList<Track>();
 		track.add(new Track(x, y, speedX, speedY, type, decomposition));
 		
+		if (explorer.onTrack == false) {
+
+			player1.tabTracks.add(track);
+			
+		}
+		else {
+			player1.tabTracks.add(explorer.IDOnTrack + 1, track);
+		}
+		
 		
 		return track;
 	}
+	
+	
 	
 	void nextIteration() {
 		//calcul prochaine pos fourmis
