@@ -52,11 +52,11 @@ public class View extends Application {
         gc.beginPath();
         gc.setFill(Color.BLUE);
         for (double[] coo : bleu) {
-            gc.fillRect(coo[1], coo[0], 1, 1);
+            gc.fillRect(coo[1], coo[0], 3, 3);
         }
         gc.setFill(Color.RED);
         for (double[] coo : rouge) {
-            gc.fillRect(coo[1], coo[0], 1, 1);
+            gc.fillRect(coo[1], coo[0], 3, 3);
         }
         for (double[] coo : food) {
             gc.setFill(Color.web("rgb(0,"+(int)coo[2]+",0)"));
