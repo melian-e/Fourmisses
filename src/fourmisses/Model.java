@@ -1,5 +1,15 @@
 package fourmisses;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -149,5 +159,61 @@ public class Model {
 			System.out.print(tabCoordsObstacle.get(i)[1]);
 			System.out.print("\n");
 		}
+	}
+	
+	
+	/////ECRITURE DANS UN FICHIER/////
+	public static void write(Player player1,Player player2) {
+		try {
+			File file = new File("data.txt");
+			
+			//créer un fichier si il n'existe pas
+			if(!file.exists()) {
+				file.createNewFile();
+			}
+			
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write("Player 1 : ");
+			bw.write(player1.nbExplorer + player1.nbWarrior + player1.nbWorker);
+			bw.write("Player 2 : ");
+			bw.write(player2.nbExplorer + player2.nbWarrior + player2.nbWorker);
+			
+			bw.close();
+			
+			System.out.println("écriture terminée");
+			
+			
+			
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	/////LECTURE DANS UN FICHIER/////
+	public static void read() {
+		Path chemin = Paths.get("data.txt");
+		InputStream input = null;
+		
+		try {
+			input = Files.newInputStream(chemin);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+			
+			String s = null;
+			s=reader.readLine(); // lire une seule ligne
+			//while(s=reader.readLine() != null){ //LIRE PLUSIEURES LIGNES (MAIS ERREUR)
+			//	System.out.println(s);
+			//}
+			input.close();
+			
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+			
+		}
+		
 	}
 }
