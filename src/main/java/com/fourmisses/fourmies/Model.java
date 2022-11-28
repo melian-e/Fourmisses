@@ -118,7 +118,7 @@ public class Model {
 		//envoie des coords des fourmis rouges
 		List<double[]> tabCoordsRouge = new ArrayList<double[]>();
 		for(int i = 0; i<player1.getTabAnt().size(); i++) {
-			for(int j = 0; i<player1.getTabAnt().get(i).size(); j++) {
+			for(int j = 0; j<player1.getTabAnt().get(i).size(); j++) {
 				double tmpx = player1.getTabAnt().get(i).get(j).getX();
 				double tmpy = player1.getTabAnt().get(i).get(j).getY();
 				double tmp[] = {tmpx,tmpy};
@@ -129,7 +129,7 @@ public class Model {
 		//envoie des coords des fourmis bleues
 		List<double[]> tabCoordsBleu = new ArrayList<double[]>();
 		for(int i = 0; i<player2.getTabAnt().size(); i++) {
-			for(int j = 0; i<player2.getTabAnt().get(i).size(); j++) {
+			for(int j = 0; j<player2.getTabAnt().get(i).size(); j++) {
 				double tmpx = player2.getTabAnt().get(i).get(j).getX();
 				double tmpy = player2.getTabAnt().get(i).get(j).getY();
 				double tmp[] = {tmpx,tmpy};
