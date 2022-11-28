@@ -162,4 +162,99 @@ public class Player {
 			}
 		}
 	}
+
+	public void createTrack(List<Food> tabFood){
+		double minVal = this.colony.dist(tabFood.get(0));
+		int id = 0;
+		for(int i = 1; i < tabFood.size(); i++){
+			if(this.colony.dist(tabFood.get(i)) < minVal)
+				minVal = this.colony.dist(tabFood.get(i));
+			id = i;
+		}
+
+		tabTracks.add(TrackCreation(tabFood.get(id).getX(),tabFood.get(id).getY()));
+	}
+	public ArrayList<Track> TrackCreation(double x, double y){
+		ArrayList<Track> track = new ArrayList<Track>();
+
+		double tmpx = this.colony.getX();
+		double tmpy = this.colony.getY();
+
+		double tmpvecx = 10;
+		double tmpvecy = 0;
+
+		if(tmpx > x) {
+			while(tmpx < x) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpx -= tmpvecx;
+			}
+			track.get(track.size()-1).setX(x);
+		}
+		else {
+			while(tmpx < x) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpx += tmpvecx;
+			}
+			track.get(track.size()-1).setX(x);
+		}
+
+		tmpvecx = 0;
+		tmpvecy = 10;
+
+		if(tmpy > y) {
+			while(tmpy > y) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpy-=tmpvecy;
+			}
+			track.get(track.size()-1).setY(y);
+		}
+		else {
+			while(tmpy < y) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpy+=tmpvecy;
+			}
+			track.get(track.size()-1).setY(y);
+		}
+
+		double tmpx2 = this.colony.getX();
+		double tmpy2 = this.colony.getY();
+
+		tmpvecx = 10;
+		tmpvecy = 0;
+
+		if(tmpx > tmpx2) {
+			while(tmpx > tmpx2) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpx -= tmpvecx;
+			}
+			track.get(track.size()-1).setX(tmpx2);
+		}
+		else {
+			while(tmpx < tmpx2) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpx += tmpvecx;
+			}
+			track.get(track.size()-1).setX(tmpx2);
+		}
+
+		tmpvecx = 0;
+		tmpvecy = 10;
+
+		if(tmpy > tmpy2) {
+			while(tmpy > tmpy2) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpy-=tmpvecy;
+			}
+			track.get(track.size()-1).setY(tmpy2);
+		}
+		else {
+			while(tmpy < tmpy2) {
+				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
+				tmpy+=tmpvecy;
+			}
+			track.get(track.size()-1).setY(tmpy2);
+		}
+		
+		return track;
+	}
 }

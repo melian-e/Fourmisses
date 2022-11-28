@@ -101,24 +101,17 @@ public class Model {
 		return tabFood;
 	}
 	
-	public ArrayList<Track> TrackCreation(int x, int y, int speedX, int speedY, boolean type, int decomposition){
-		
-		ArrayList<Track> track = new ArrayList<Track>();
-		track.add(new Track(x, y, speedX, speedY, type, decomposition));
-		
-		
-		return track;
-	}
-	
-	void nextIteration() {
+	void nextIteration(int tick) {
 		//calcul prochaine pos fourmis
 		player1.dispatchWorker();
 		
 		//calcul prochaine pos fourmis player2
 		player2.dispatchWorker();
-		
-		//
 
+		if(tick%100 == 0) {
+			player1.createTrack(tabFood);
+			player2.createTrack(tabFood);
+		}
 	}
 	
 	List<double[]>[] updateView() {

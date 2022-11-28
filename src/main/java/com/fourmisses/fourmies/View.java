@@ -73,6 +73,5 @@ public class View extends Application {
         test.start();
         launch(args);
         System.out.println("Starting");
-        
     }
 }

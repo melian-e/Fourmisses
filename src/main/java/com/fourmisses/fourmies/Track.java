@@ -15,7 +15,7 @@ public class Track extends Vector{
 	
 	
 	/////CONSTRUCTOR/////
-	public Track(int x, int y, int speedX, int speedY, boolean type, int decomposition) {
+	public Track(double x, double y, double speedX, double speedY, boolean type, int decomposition) {
 		super(x, y, speedX, speedY);
 		this.type = type;
 		this.decomposition = decomposition;
