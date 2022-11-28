@@ -11,12 +11,11 @@ public class Model {
 	List<Food> tabFood = new ArrayList<Food>();
 	int decompoTrackTot;
 	int stockFoodInit = 300;
-	int totalObstacleFood = 10;
+	int totalObstacleFood = 2;
 	
 	
 	/*initialisation  obstacles, nourriture, class player*/	
 	public Model(double Height, double Width) {
-		System.out.println("BOUH");
 		// initialisation : les variables seront calculées par des méthodes auparavant (symétrie notamment)
 		this.gameHeightWidth[0] = Height;
 		this.gameHeightWidth[1] = Width;
@@ -25,8 +24,10 @@ public class Model {
 		double coordColony1[] = {40,40};
 		List<double[]> tabCoordsObstacle = new ArrayList<double[]>();
 		for(int i = 0; i<totalObstacleFood/2; i++) {
+			System.out.println("BOUH");
 			double randomx = (Math.random()*this.gameHeightWidth[0]);
-			double randomy = (Math.random()*this.gameHeightWidth[1]);
+			double randomy = (Math.random()*this.gameHeightWidth[1]/2);
+			System.out.println(randomx);
 			double tmp[] = {randomx,randomy};
 			tabCoordsObstacle.add(tmp);
 		}
@@ -34,9 +35,11 @@ public class Model {
 		//symétrie
 		double coordColony2[] = {gameHeightWidth[0] - coordColony1[0], gameHeightWidth[1] - coordColony1[1]};
 		for(int i = 0; i<totalObstacleFood/2; i++) {
-			double[] tmp = tabCoordsObstacle.get(i);
-			tmp[0] = gameHeightWidth[0] - tmp[0];
-			tmp[1] = gameHeightWidth[1] - tmp[1];
+			System.out.println("BOUH");
+			double randomx = tabCoordsObstacle.get(i)[0];
+			double randomy = gameHeightWidth[1] - tabCoordsObstacle.get(i)[1];
+			System.out.println(randomx);
+			double tmp[] = {randomx,randomy};
 			tabCoordsObstacle.add(tmp);
 		}
 		
