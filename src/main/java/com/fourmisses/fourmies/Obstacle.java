@@ -7,5 +7,6 @@ public class Obstacle extends Pos{
 	public Obstacle(double x,double y) {
 		super(x,y);
 	}
-	
+
+
 }

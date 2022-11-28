@@ -51,8 +51,8 @@ public class Ant extends Vector {
 	}
 	
 	Boolean returnToTrack() { // " si le retour à la trace marche pas, c'est ICI que ça bloque " - Iemelian 02/11/2022 11:50
-		int diffX = (int) (this.currentTrack.get(IDOnTrack).getX() - this.x);
-		int diffY = (int) (this.currentTrack.get(IDOnTrack).getY() - this.y);
+		double diffX =  (this.currentTrack.get(IDOnTrack).getX() - this.x);
+		double diffY =  (this.currentTrack.get(IDOnTrack).getY() - this.y);
 		
 		double angle = Math.atan(diffX/diffY);
 		
