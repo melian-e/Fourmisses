@@ -13,6 +13,8 @@ public class Track extends Vector{
 	//quand decomposition vaut 0 la trace est détruite
 	int decomposition;
 	
+	int ID;
+	
 	
 	/////CONSTRUCTOR/////
 	public Track(double x, double y, double speedX, double speedY, boolean type, int decomposition) {

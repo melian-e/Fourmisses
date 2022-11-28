@@ -35,9 +35,11 @@ public class Ant extends Vector {
 		return true;
 	}
 	
-	Boolean followTrack() {
+	Void followTrack() {
 		
-		return true;
+		this.x += this.vecX;
+		this.y += this.vecY; 
+		
 	}
 	
 	Boolean isOnTrack() {
