@@ -46,6 +46,8 @@ public class View extends Application {
 
     public static void displayEverything(List<double[]> bleu, List<double[]> rouge, List<double[]> food, List<double[]> obstacles) {
 
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
         gc.beginPath();
         gc.setFill(Color.BLUE);
         for (double[] coo : bleu) {
