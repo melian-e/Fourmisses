@@ -36,7 +36,7 @@ public class Model {
 		double coordColony2[] = {gameHeightWidth[0] - coordColony1[0], gameHeightWidth[1] - coordColony1[1]};
 		for(int i = 0; i<totalObstacleFood/2; i++) {
 			System.out.println("BOUH");
-			double randomx = tabCoordsObstacle.get(i)[0];
+			double randomx = gameHeightWidth[0] - tabCoordsObstacle.get(i)[0];
 			double randomy = gameHeightWidth[1] - tabCoordsObstacle.get(i)[1];
 			System.out.println(randomx);
 			double tmp[] = {randomx,randomy};
