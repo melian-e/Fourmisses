@@ -45,6 +45,11 @@ public class View extends Application {
 
     public static void displayEverything(List<double[]> bleu, List<double[]> rouge, List<double[]> food, List<double[]> obstacles) {
 
+        System.out.println(bleu.size());
+        System.out.println(rouge.size());
+        System.out.println(food.size());
+        System.out.println(obstacles.size());
+
         gc.beginPath();
         gc.setFill(Color.BLUE);
         for (double[] coo : bleu) {
@@ -60,13 +65,15 @@ public class View extends Application {
         }
         gc.setFill(Color.GRAY);
         for (double[] coo : obstacles) {
-            gc.fillRect(coo[0],coo[1], 4, 4);
+            gc.fillRect(coo[1],coo[0], 4, 4);
         }
         gc.stroke();
     }
     public static void main(String[] args) {
         View view = new View();
-        Model model = new Model(screenHeight, screenWidth);
+        System.out.println(getScreenHeight());
+        System.out.println(getScreenWidth());
+        Model model = new Model(getScreenHeight(), getScreenWidth());
         List<double[]>[] rtrn = model.updateView();
         displayEverything(rtrn[0], rtrn[1], rtrn[2], rtrn[3]);
         launch(args);
