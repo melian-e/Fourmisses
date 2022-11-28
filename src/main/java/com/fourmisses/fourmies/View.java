@@ -1,6 +1,7 @@
 package com.fourmisses.fourmies;
 
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -72,5 +73,6 @@ public class View extends Application {
         test.start();
         launch(args);
         System.out.println("Starting");
+        
     }
 }
