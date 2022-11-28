@@ -182,13 +182,17 @@ public class Model {
 				double tmpy = player1.getTabTracks().get(i).get(j).getY();
 				double tmp[] = {tmpx, tmpy};
 				track.add(tmp);
+
+			}
+		}
+		for(int i = 0; i<player2.getTabTracks().size(); i++) {
+			for(int j = 0; j<player2.getTabTracks().get(i).size(); j++) {
 				double tmpx2 = player2.getTabTracks().get(i).get(j).getX();
 				double tmpy2 = player2.getTabTracks().get(i).get(j).getY();
 				double tmp2[] = {tmpx2, tmpy2};
 				track.add(tmp2);
 			}
 		}
-
 //		for(int i = 0; i<tabCoordsFood.size(); i++) {
 //			System.out.print(tabCoordsFood.get(i)[0]);
 //			System.out.print(" ");
