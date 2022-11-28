@@ -96,7 +96,7 @@ public class Model {
 		for(double i = pas; i < Math.PI/2; i=i+pas) {
 			xtmp = Math.cos(i)*Math.sqrt(radius);
 			ytmp = Math.sin(i)*Math.sqrt(radius);
-			
+				
 			tabFood.add(new Food(x-xtmp, y-ytmp,stockFoodInit));
 			tabFood.add(new Food(x-xtmp, y+ytmp,stockFoodInit));
 			tabFood.add(new Food(x+xtmp, y-ytmp,stockFoodInit));			
@@ -168,13 +168,6 @@ public class Model {
 			double tmp[] = {tmpx,tmpy};
 			
 			tabCoordsObstacles.add(tmp);
-		}
-		
-		for(int i = 0; i<tabCoordsFood.size(); i++) {
-			System.out.print(tabCoordsFood.get(i)[0]);
-			System.out.print(" ");
-			System.out.print(tabCoordsFood.get(i)[1]);
-			System.out.print("\n");
 		}
 
 		List<double[]>[] data = new List[4];
