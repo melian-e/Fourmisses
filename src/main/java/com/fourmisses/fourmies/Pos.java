@@ -30,8 +30,6 @@ public abstract class Pos {
 		
 		double A;
 		double B;
-		double hypo;
-		double dist;
 
 		A = Math.abs(this.x - obj.x);
 		B = Math.abs(this.y - obj.y);
