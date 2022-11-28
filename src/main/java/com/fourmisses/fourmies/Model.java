@@ -169,8 +169,8 @@ public class Model {
 
 		List<double[]> colony2 = new ArrayList<double[]>();
 		for(int i = 0; i<1; i++) {
-			double tmpx = this.player1.getColony().getX();
-			double tmpy = this.player1.getColony().getY();
+			double tmpx = this.player2.getColony().getX();
+			double tmpy = this.player2.getColony().getY();
 			double tmp[] = {tmpx,tmpy};
 			colony2.add(tmp);
 		}
