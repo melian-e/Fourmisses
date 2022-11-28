@@ -1,6 +1,7 @@
 package com.fourmisses.fourmies;
 
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -36,7 +37,7 @@ public class View extends Application {
         var root = new Pane();
         root.getChildren().add(canvas);
 
-        var scene = new Scene(root, screenWidth, screenHeight-75, Color.WHITE);
+        var scene = new Scene(root, screenWidth, screenHeight-75, Color.BLACK);
 
         stage.setTitle("Fourmisses");
         stage.setScene(scene);
@@ -71,5 +72,6 @@ public class View extends Application {
         displayEverything(rtrn[0], rtrn[1], rtrn[2], rtrn[3]);
         launch(args);
         System.out.println("Starting");
+        
     }
 }
