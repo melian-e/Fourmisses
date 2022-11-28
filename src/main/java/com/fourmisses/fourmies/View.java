@@ -43,12 +43,16 @@ public class View extends Application {
         stage.show();
     }
 
-    public static void displayEverything(List<double[]> bleu, List<double[]> rouge, List<double[]> food, List<double[]> obstacles, List<double[]> colonieRouge, List<double[]> colonieBleue) {
+    public static void displayEverything(List<double[]> bleu, List<double[]> rouge, List<double[]> food, List<double[]> obstacles, List<double[]> colonieRouge, List<double[]> colonieBleue, List<double[]> tracks) {
 
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         gc.beginPath();
 
+        gc.setFill(Color.YELLOW);
+        for (double[] coo : tracks) {
+            gc.fillRect(coo[1],coo[0], 1, 1);
+        }
         gc.setFill(Color.web("rgb(0,0,255)"));
         gc.fillRect(colonieBleue.get(0)[1], colonieBleue.get(0)[0], 20, 20);
         gc.setFill(Color.BLUE);
