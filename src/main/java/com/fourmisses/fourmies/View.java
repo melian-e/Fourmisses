@@ -58,8 +58,8 @@ public class View extends Application {
         for (double[] coo : rouge) {
             gc.fillRect(coo[1], coo[0], 1, 1);
         }
-        gc.setFill(Color.GREEN);
         for (double[] coo : food) {
+            gc.setFill(Color.web("rgb(0,"+(int)coo[2]+",0)"));
             gc.fillRect(coo[1], coo[0], 1, 1);
         }
         gc.setFill(Color.GRAY);
@@ -69,8 +69,8 @@ public class View extends Application {
         gc.stroke();
     }
     public static void main(String[] args) {
-        BackGround test = new BackGround();
-        test.start();
+        BackGround clock = new BackGround();
+        clock.start();
         launch(args);
         System.out.println("Starting");
     }
