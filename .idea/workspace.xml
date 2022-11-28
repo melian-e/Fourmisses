@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eaa9e80-48ef-471c-a5a1-72323e932476" name="Changes" comment="">
+    <list default="true" id="3c4054fb-eb80-4d0a-8d7b-1396172a72b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Background.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/View.class" afterDir="false" />
     </list>

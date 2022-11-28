@@ -69,8 +69,8 @@ public class View extends Application {
         gc.stroke();
     }
     public static void main(String[] args) {
-        BackGround test = new BackGround();
-        test.start();
+        BackGround clock = new BackGround();
+        clock.start();
         launch(args);
         System.out.println("Starting");
         
