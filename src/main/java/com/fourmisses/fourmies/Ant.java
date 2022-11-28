@@ -39,7 +39,7 @@ public class Ant extends Vector {
 		this.x = this.currentTrack.get(IDOnTrack).getX();
 		this.y = this.currentTrack.get(IDOnTrack).getY();
 
-		if(IDOnTrack < this.currentTrack.size()){
+		if(IDOnTrack < this.currentTrack.size()-1){
 			IDOnTrack+=1;
 		} else {
 			IDOnTrack = 0;
