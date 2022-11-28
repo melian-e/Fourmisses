@@ -178,19 +178,27 @@ public class Model {
 
 	Boolean willItCollide(Vector obj1) {
 		for(int i = 0; i < this.tabObstacle.size(); i++) {
-			double distObj1 = obj1.dist(this.tabFood.get(i));
+			double distObj1 = obj1.dist(this.tabObstacle.get(i));
 			if(distObj1<10) {
 				Vector objTmp = obj1;
 				objTmp.setX(objTmp.getX()+objTmp.getVecX());
 				objTmp.setY(objTmp.getY()+objTmp.getVecY());
-				if(distObj1<obj1.dist(this.tabFood.get(i))) {
+				if(distObj1<obj1.dist(this.tabObstacle.get(i))) {
 					return true;
 				}
 			}
 		}
 		for(int i = 0; i < this.tabFood.size(); i++) {
 			if(obj1.dist(this.tabFood.get(i))<10) {
-
+				double distObj1 = obj1.dist(this.tabFood.get(i));
+				if(distObj1<10) {
+					Vector objTmp = obj1;
+					objTmp.setX(objTmp.getX()+objTmp.getVecX());
+					objTmp.setY(objTmp.getY()+objTmp.getVecY());
+					if(distObj1<obj1.dist(this.tabFood.get(i))) {
+						return true;
+					}
+				}
 			}
 		}
 
