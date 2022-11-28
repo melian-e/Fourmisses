@@ -32,25 +32,11 @@ public abstract class Pos {
 		double B;
 		double hypo;
 		double dist;
-		
-		if(this.x >= obj.x) {
-			A = this.x - obj.x;
-		}
-		else {
-			A = obj.x - this.x;
-		}
-		
-		if(this.y >= obj.y) {
-			B = this.y - obj.y;
-		}
-		else {
-			B = obj.y - this.y;
-		}
-		
-		hypo = Math.pow(A, 2) + Math.pow(B, 2);
-		dist = Math.sqrt(hypo);
-		
-		return dist;
+
+		A = Math.abs(this.x - obj.x);
+		B = Math.abs(this.y - obj.y);
+
+		return Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2));
 	}
 
 	
