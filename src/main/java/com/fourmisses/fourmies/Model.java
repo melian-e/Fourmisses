@@ -158,7 +158,23 @@ public class Model {
 			
 			tabCoordsObstacles.add(tmp);
 		}
-		
+
+		List<double[]> colony1 = new ArrayList<double[]>();
+		for(int i = 0; i<1; i++) {
+			double tmpx = this.player1.getColony().getX();
+			double tmpy = this.player1.getColony().getY();
+			double tmp[] = {tmpx,tmpy};
+			colony1.add(tmp);
+		}
+
+		List<double[]> colony2 = new ArrayList<double[]>();
+		for(int i = 0; i<1; i++) {
+			double tmpx = this.player1.getColony().getX();
+			double tmpy = this.player1.getColony().getY();
+			double tmp[] = {tmpx,tmpy};
+			colony2.add(tmp);
+		}
+
 //		for(int i = 0; i<tabCoordsFood.size(); i++) {
 //			System.out.print(tabCoordsFood.get(i)[0]);
 //			System.out.print(" ");
@@ -166,11 +182,13 @@ public class Model {
 //			System.out.print("\n");
 //		}
 
-		List<double[]>[] data = new List[4];
+		List<double[]>[] data = new List[6];
 		data[0] = tabCoordsBleu;
 		data[1] = tabCoordsRouge;
 		data[2] = tabCoordsFood;
 		data[3] = tabCoordsObstacles;
+		data[4] = colony1;
+		data[5] = colony2;
 		return data;
 	}
 }
