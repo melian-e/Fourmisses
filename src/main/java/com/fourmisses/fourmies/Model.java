@@ -11,7 +11,7 @@ public class Model {
 	List<Food> tabFood = new ArrayList<Food>();
 	int decompoTrackTot;
 	int stockFoodInit = 300;
-	int totalObstacleFood = 1000;
+	int totalObstacleFood = 30;
 	
 	
 	/*initialisation  obstacles, nourriture, class player*/	
@@ -57,7 +57,7 @@ public class Model {
 	}
 	
 	public List<Wall> wallCreation(double x, double y){//créations des obstacles, potentiellement une usine à gaz
-		int radius = (int)(5+Math.random()*10);//largeur max obstacle : 15
+		int radius = (int)(20+Math.random()*30);//largeur max obstacle : 15
 		List<Wall> tabWall = new ArrayList<Wall>();
 		
 		double xtmp = (Math.cos(0)*Math.sqrt(radius));
@@ -67,7 +67,7 @@ public class Model {
 		tabWall.add(new Wall(x-xtmp, y+ytmp));
 		tabWall.add(new Wall(x+xtmp, y-ytmp));
 		
-		double pas = 0.2;
+		double pas = 0.05;
 		for(double i = pas; i < Math.PI/2; i=i+pas) {
 			xtmp = Math.cos(i)*Math.sqrt(radius);
 			ytmp = Math.sin(i)*Math.sqrt(radius);
@@ -81,14 +81,14 @@ public class Model {
 	}
 	
 	public List<Food> foodCreation(double x, double y, int stockFoodInit){//créations des obstacles, potentiellement une usine à gaz
-		int radius = (int)(5+Math.random()*10);//largeur max obstacle : 15
+		int radius = (int)(20+Math.random()*30);//largeur max obstacle : 15
 		List<Food> tabFood = new ArrayList<Food>();
 		
 		double xtmp = (Math.cos(0)*Math.sqrt(radius));
 		double ytmp = (Math.sin(0)*Math.sqrt(radius));
 		tabFood.add(new Food(x+xtmp, y+ytmp,stockFoodInit));
 		
-		double pas = 0.2;
+		double pas = 0.05;
 		for(double i = pas; i < Math.PI/2; i=i+pas) {
 			xtmp = Math.cos(i)*Math.sqrt(radius);
 			ytmp = Math.sin(i)*Math.sqrt(radius);
@@ -108,7 +108,7 @@ public class Model {
 		//calcul prochaine pos fourmis player2
 		player2.dispatchWorker();
 
-		if(tick%10 == 0) {
+		if(tick%100 == 0) {
 			player1.createTrack(tabFood);
 			player2.createTrack(tabFood);
 		}
@@ -175,6 +175,20 @@ public class Model {
 			colony2.add(tmp);
 		}
 
+		List<double[]> track = new ArrayList<double[]>();
+		for(int i = 0; i<player1.getTabTracks().size(); i++) {
+			for(int j = 0; j<player1.getTabTracks().get(i).size(); j++) {
+				double tmpx = player1.getTabTracks().get(i).get(j).getX();
+				double tmpy = player1.getTabTracks().get(i).get(j).getY();
+				double tmp[] = {tmpx, tmpy};
+				track.add(tmp);
+				double tmpx2 = player2.getTabTracks().get(i).get(j).getX();
+				double tmpy2 = player2.getTabTracks().get(i).get(j).getY();
+				double tmp2[] = {tmpx2, tmpy2};
+				track.add(tmp2);
+			}
+		}
+
 //		for(int i = 0; i<tabCoordsFood.size(); i++) {
 //			System.out.print(tabCoordsFood.get(i)[0]);
 //			System.out.print(" ");
@@ -182,13 +196,14 @@ public class Model {
 //			System.out.print("\n");
 //		}
 
-		List<double[]>[] data = new List[6];
+		List<double[]>[] data = new List[7];
 		data[0] = tabCoordsBleu;
 		data[1] = tabCoordsRouge;
 		data[2] = tabCoordsFood;
 		data[3] = tabCoordsObstacles;
 		data[4] = colony1;
 		data[5] = colony2;
+		data[6] = track;
 		return data;
 	}
 }
