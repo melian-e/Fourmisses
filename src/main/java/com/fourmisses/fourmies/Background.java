@@ -3,7 +3,7 @@ package com.fourmisses.fourmies;
 import java.util.List;
 
 class BackGround extends Thread {
-    private Model model = new Model(View.getScreenHeight(), View.getScreenWidth());
+    private Model model = new Model(View.getScreenHeight()-75, View.getScreenWidth());
     private int tick = 0;
     public BackGround(){}
     @Override

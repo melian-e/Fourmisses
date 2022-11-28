@@ -7,10 +7,8 @@ public class Warrior extends Ant{
 	int targetFlagY;
 	
 	/////CONSTRUCTOR/////
-	public Warrior(int x, int y, int speedX, int speedY, Boolean onTrack, int lastTrackX, int lastTrackY,
-			int lastTrackVecX, int lastTrackVecY, int id, int health, int food, Boolean isFighting, int targetFlagX,
-			int targetFlagY) {
-		super(x, y, speedX, speedY, onTrack, lastTrackX, lastTrackY, lastTrackVecX, lastTrackVecY, id, health, food);
+	public Warrior(double x, double y, int speedX, int speedY, Boolean onTrack, int id, int health, int food) {
+		super(x, y, speedX, speedY, onTrack, id, health, food);
 		this.isFighting = isFighting;
 		this.targetFlagX = targetFlagX;
 		this.targetFlagY = targetFlagY;

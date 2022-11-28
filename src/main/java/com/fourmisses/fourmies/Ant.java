@@ -15,8 +15,7 @@ public class Ant extends Vector {
 	int food = 100;
 	
 	/////CONSTRUCTOR/////
-	public Ant(int x, int y, double speedX, double speedY, Boolean onTrack, int lastTrackX, int lastTrackY, int lastTrackVecX,
-			int lastTrackVecY, int id, int health, int food) {
+	public Ant(double x, double y, double speedX, double speedY, Boolean onTrack, int id, int health, int food) {
 		super(x, y, speedX, speedY);
 		this.onTrack = onTrack;
 		

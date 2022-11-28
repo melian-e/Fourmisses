@@ -27,6 +27,19 @@ public class Player {
 		this.nbWorker = nbWorker;
 		this.nbExplorer = nbExplorer;
 		this.colony = new Colony(coordColony1, coordColony12, 1800);
+
+		this.tabAnt.add(new ArrayList<Ant>());
+		for(int i = 0; i < nbWorker; i++) {
+			this.tabAnt.get(0).add(new Worker(colony.getX(), colony.getY(), 0,0,false,this.tabAnt.size(),100,100));
+		}
+		this.tabAnt.add(new ArrayList<Ant>());
+		for(int i = 0; i < nbWarrior; i++) {
+			this.tabAnt.get(1).add(new Warrior(colony.getX(), colony.getY(), 0,0,false,this.tabAnt.size(),100,100));
+		}
+		this.tabAnt.add(new ArrayList<Ant>());
+		for(int i = 0; i < nbExplorer; i++) {
+			this.tabAnt.get(2).add(new Explorer(colony.getX(), colony.getY(), 0,0,false,this.tabAnt.size(),100,100));
+		}
 	}
 	
 	
@@ -150,15 +163,17 @@ public class Player {
 				}
 			}
 			else {
-				double min = (tabWorkerOnTracks.get(0)/tabAnt.get(0).size())-(tabTracks.get(0).get(0).getDecompo()/decompoTrackTot);
-				int IDMin = 0;
-				for(int i = 1; i < tabTracks.size(); i++) {
-					if((tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot)<min) {
-						min = (tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot);
-						IDMin = i;
+				if(tabTracks.size()>0){
+					double min = (tabWorkerOnTracks.get(0)/tabAnt.get(0).size())-(tabTracks.get(0).get(0).getDecompo()/decompoTrackTot);
+					int IDMin = 0;
+					for(int i = 1; i < tabTracks.size(); i++) {
+						if((tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot)<min) {
+							min = (tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot);
+							IDMin = i;
+						}
 					}
+					ant.startTrack(tabTracks.get(IDMin));
 				}
-				ant.startTrack(tabTracks.get(IDMin));					
 			}
 		}
 	}

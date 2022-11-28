@@ -118,7 +118,7 @@ public class Model {
 		//envoie des coords des fourmis rouges
 		List<double[]> tabCoordsRouge = new ArrayList<double[]>();
 		for(int i = 0; i<player1.getTabAnt().size(); i++) {
-			for(int j = 0; i<player1.getTabAnt().get(i).size(); j++) {
+			for(int j = 0; j<player1.getTabAnt().get(i).size(); j++) {
 				double tmpx = player1.getTabAnt().get(i).get(j).getX();
 				double tmpy = player1.getTabAnt().get(i).get(j).getY();
 				double tmp[] = {tmpx,tmpy};
@@ -129,7 +129,7 @@ public class Model {
 		//envoie des coords des fourmis bleues
 		List<double[]> tabCoordsBleu = new ArrayList<double[]>();
 		for(int i = 0; i<player2.getTabAnt().size(); i++) {
-			for(int j = 0; i<player2.getTabAnt().get(i).size(); j++) {
+			for(int j = 0; j<player2.getTabAnt().get(i).size(); j++) {
 				double tmpx = player2.getTabAnt().get(i).get(j).getX();
 				double tmpy = player2.getTabAnt().get(i).get(j).getY();
 				double tmp[] = {tmpx,tmpy};
@@ -158,7 +158,23 @@ public class Model {
 			
 			tabCoordsObstacles.add(tmp);
 		}
-		
+
+		List<double[]> colony1 = new ArrayList<double[]>();
+		for(int i = 0; i<1; i++) {
+			double tmpx = this.player1.getColony().getX();
+			double tmpy = this.player1.getColony().getY();
+			double tmp[] = {tmpx,tmpy};
+			colony1.add(tmp);
+		}
+
+		List<double[]> colony2 = new ArrayList<double[]>();
+		for(int i = 0; i<1; i++) {
+			double tmpx = this.player2.getColony().getX();
+			double tmpy = this.player2.getColony().getY();
+			double tmp[] = {tmpx,tmpy};
+			colony2.add(tmp);
+		}
+
 //		for(int i = 0; i<tabCoordsFood.size(); i++) {
 //			System.out.print(tabCoordsFood.get(i)[0]);
 //			System.out.print(" ");
@@ -166,11 +182,13 @@ public class Model {
 //			System.out.print("\n");
 //		}
 
-		List<double[]>[] data = new List[4];
+		List<double[]>[] data = new List[6];
 		data[0] = tabCoordsBleu;
 		data[1] = tabCoordsRouge;
 		data[2] = tabCoordsFood;
 		data[3] = tabCoordsObstacles;
+		data[4] = colony1;
+		data[5] = colony2;
 		return data;
 	}
 }
