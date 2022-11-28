@@ -6,7 +6,7 @@ public abstract class Vector extends Pos{
 	double vecY;
 	
 	/////CONSTRUCTOR/////
-	public Vector(int x, int y, double vecX, double vecY) {
+	public Vector(double x, double y, double vecX, double vecY) {
 		super(x, y);
 		this.vecX = vecX;
 		this.vecY = vecY;
