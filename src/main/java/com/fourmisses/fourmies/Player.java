@@ -16,7 +16,7 @@ public class Player {
 	List<ArrayList<Ant>> tabAnt = new ArrayList<ArrayList<Ant>>();	//tableau qui contient toutes les fourmis
 	List<ArrayList<Track>> tabTracks = new ArrayList<ArrayList<Track>>();
 	List<Integer> tabWorkerOnTracks = new ArrayList<Integer>();
-	int decompoTrackTot = 0;
+	int decompoTrackTot = 1;
 	
 	/////CONSTRUCTOR/////
 	public Player(int globalFood, int nbAntType, int nbWarrior, int nbWorker, int nbExplorer,double coordColony1, double coordColony12) {
@@ -148,6 +148,8 @@ public class Player {
 
 
 	public int getDecompoTrackTot() {
+		this.decompoTrackTot = 1;
+
 		for(int j = 0; j < tabTracks.size(); j++) {
 			this.decompoTrackTot += this.tabTracks.get(j).get(0).getDecompo();
 		}
@@ -155,6 +157,7 @@ public class Player {
 	}
 	
 	public void dispatchWorker() {
+		this.getDecompoTrackTot();
 		for(int j = 0; j < tabAnt.get(0).size(); j++) {
 			Ant ant = tabAnt.get(0).get(j);
 			if(ant.isOnTrack()) {
@@ -167,12 +170,14 @@ public class Player {
 					double min = (tabWorkerOnTracks.get(0)/tabAnt.get(0).size())-(tabTracks.get(0).get(0).getDecompo()/decompoTrackTot);
 					int IDMin = 0;
 					for(int i = 1; i < tabTracks.size(); i++) {
-						if((tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot)<min) {
-							min = (tabWorkerOnTracks.get(i)/tabAnt.get(i).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot);
+						if((tabWorkerOnTracks.get(i)/tabAnt.get(0).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot)<min) {
+							min = (tabWorkerOnTracks.get(i)/tabAnt.get(0).size())-(tabTracks.get(i).get(0).getDecompo()/decompoTrackTot);
 							IDMin = i;
 						}
 					}
 					ant.startTrack(tabTracks.get(IDMin));
+					int worker = this.tabWorkerOnTracks.get(IDMin);
+					worker++;
 				}
 			}
 		}
@@ -187,9 +192,11 @@ public class Player {
 			id = i;
 		}
 
-		tabTracks.add(TrackCreation(tabFood.get(id).getX(),tabFood.get(id).getY()));
+		this.tabTracks.add(TrackCreation(tabFood.get(id).getX(),tabFood.get(id).getY()));
+		this.tabWorkerOnTracks.add(0);
 	}
 	public ArrayList<Track> TrackCreation(double x, double y){
+		System.out.println("Nouvelle track");
 		ArrayList<Track> track = new ArrayList<Track>();
 
 		double tmpx = this.colony.getX();
@@ -199,7 +206,7 @@ public class Player {
 		double tmpvecy = 0;
 
 		if(tmpx > x) {
-			while(tmpx < x) {
+			while(tmpx > x) {
 				track.add(new Track(tmpx, tmpy, tmpvecx, tmpvecy, false, 100));
 				tmpx -= tmpvecx;
 			}

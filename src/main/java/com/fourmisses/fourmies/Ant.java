@@ -36,10 +36,17 @@ public class Ant extends Vector {
 	}
 	
 	Void followTrack() {
-		
-		this.x += this.vecX;
-		this.y += this.vecY; 
-		
+		this.x += this.currentTrack.get(IDOnTrack).getX();
+		this.y += this.currentTrack.get(IDOnTrack).getY();
+
+		if(IDOnTrack < this.currentTrack.size()){
+			IDOnTrack+=1;
+		} else {
+			IDOnTrack = 0;
+		}
+
+
+		return null;
 	}
 	
 	Boolean isOnTrack() {

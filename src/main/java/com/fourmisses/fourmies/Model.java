@@ -108,7 +108,7 @@ public class Model {
 		//calcul prochaine pos fourmis player2
 		player2.dispatchWorker();
 
-		if(tick%100 == 0) {
+		if(tick%10 == 0) {
 			player1.createTrack(tabFood);
 			player2.createTrack(tabFood);
 		}

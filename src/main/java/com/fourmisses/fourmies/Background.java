@@ -10,11 +10,11 @@ class BackGround extends Thread {
     public void run() {
         while (true) {
             try {
-                this.tick++;
                 model.nextIteration(tick);
                 List<double[]>[] rtrn = model.updateView();
                 View.displayEverything(rtrn[0], rtrn[1], rtrn[2], rtrn[3], rtrn[4], rtrn[5]);
                 Thread.sleep( 1000 );
+                this.tick++;
             } catch ( InterruptedException e ) {}
         }
     }
