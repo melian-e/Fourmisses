@@ -254,7 +254,7 @@ public class Player {
 			}
 			track.get(track.size()-1).setY(tmpy2);
 		}
-		
+
 		return track;
 	}
 }

@@ -11,6 +11,7 @@ class BackGround extends Thread {
         while (true) {
             try {
                 this.tick++;
+                model.nextIteration(tick);
                 List<double[]>[] rtrn = model.updateView();
                 View.displayEverything(rtrn[0], rtrn[1], rtrn[2], rtrn[3]);
                 Thread.sleep( 1000 );
