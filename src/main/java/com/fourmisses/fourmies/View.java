@@ -45,15 +45,20 @@ public class View extends Application {
         stage.show();
     }
 
-    public static void displayEverything(List<double[]> bleu, List<double[]> rouge, List<double[]> food, List<double[]> obstacles) {
+    public static void displayEverything(List<double[]> bleu, List<double[]> rouge, List<double[]> food, List<double[]> obstacles, List<double[]> colonieRouge, List<double[]> colonieBleue) {
 
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         gc.beginPath();
+
+        gc.setFill(Color.web("rgb(0,0,255)"));
+        gc.fillRect(colonieBleue.get(0)[1], colonieBleue.get(0)[0], 20, 20);
         gc.setFill(Color.BLUE);
         for (double[] coo : bleu) {
             gc.fillRect(coo[1], coo[0], 3, 3);
         }
+        gc.setFill(Color.web("rgb(255,0,0)"));
+        gc.fillRect(colonieRouge.get(0)[1], colonieRouge.get(0)[0], 20, 20);
         gc.setFill(Color.RED);
         for (double[] coo : rouge) {
             gc.fillRect(coo[1], coo[0], 3, 3);
@@ -72,6 +77,5 @@ public class View extends Application {
         BackGround clock = new BackGround();
         clock.start();
         launch(args);
-        System.out.println("Starting");
     }
 }
