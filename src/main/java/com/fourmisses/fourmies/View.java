@@ -5,6 +5,7 @@ import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
@@ -66,10 +67,8 @@ public class View extends Application {
         gc.stroke();
     }
     public static void main(String[] args) {
-        View view = new View();
-        Model model = new Model(getScreenHeight(), getScreenWidth());
-        List<double[]>[] rtrn = model.updateView();
-        displayEverything(rtrn[0], rtrn[1], rtrn[2], rtrn[3]);
+        BackGround test = new BackGround();
+        test.start();
         launch(args);
         System.out.println("Starting");
         
