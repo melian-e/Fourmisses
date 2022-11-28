@@ -11,7 +11,11 @@ public class Model {
 	List<Food> tabFood = new ArrayList<Food>();
 	int decompoTrackTot;
 	int stockFoodInit = 300;
+<<<<<<< HEAD
 	int totalObstacleFood = 2;
+=======
+	int totalObstacleFood = 1000;
+>>>>>>> a6f31d89a0c884e405fdc33df4583ebadc883491
 	
 	
 	/*initialisation  obstacles, nourriture, class player*/	
@@ -61,7 +65,7 @@ public class Model {
 	}
 	
 	public List<Wall> wallCreation(double x, double y){//créations des obstacles, potentiellement une usine à gaz
-		int radius = (int)(1+Math.random()*2);//largeur max obstacle : 15 
+		int radius = (int)(5+Math.random()*10);//largeur max obstacle : 15
 		List<Wall> tabWall = new ArrayList<Wall>();
 		
 		double xtmp = (Math.cos(0)*Math.sqrt(radius));
@@ -85,7 +89,7 @@ public class Model {
 	}
 	
 	public List<Food> foodCreation(double x, double y, int stockFoodInit){//créations des obstacles, potentiellement une usine à gaz
-		int radius = (int)(1+Math.random()*2);//largeur max obstacle : 15 
+		int radius = (int)(5+Math.random()*10);//largeur max obstacle : 15
 		List<Food> tabFood = new ArrayList<Food>();
 		
 		double xtmp = (Math.cos(0)*Math.sqrt(radius));

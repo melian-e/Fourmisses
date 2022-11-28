@@ -53,19 +53,19 @@ public class View extends Application {
         gc.beginPath();
         gc.setFill(Color.BLUE);
         for (double[] coo : bleu) {
-            gc.fillRect(coo[0], coo[1], 4, 4);
+            gc.fillRect(coo[1], coo[0], 1, 1);
         }
         gc.setFill(Color.RED);
         for (double[] coo : rouge) {
-            gc.fillRect(coo[0], coo[1], 4, 4);
+            gc.fillRect(coo[1], coo[0], 1, 1);
         }
         gc.setFill(Color.GREEN);
         for (double[] coo : food) {
-            gc.fillRect(coo[0], coo[1], 4, 4);
+            gc.fillRect(coo[1], coo[0], 1, 1);
         }
         gc.setFill(Color.GRAY);
         for (double[] coo : obstacles) {
-            gc.fillRect(coo[1],coo[0], 4, 4);
+            gc.fillRect(coo[1],coo[0], 1, 1);
         }
         gc.stroke();
     }
