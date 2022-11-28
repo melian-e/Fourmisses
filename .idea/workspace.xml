@@ -9,7 +9,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fourmies.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Fourmies.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Model.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fourmisses/fourmies/Model.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fourmisses/fourmies/Player.java" afterDir="false" />
+>>>>>>> df391c5657bc40b711f024039cdf80de7caaf95b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

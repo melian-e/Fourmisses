@@ -13,8 +13,6 @@ public class Player {
 	int nbWarrior; // nombre de guerrieres
 	int nbWorker;	// nombre d'ouvrières
 	int nbExplorer;	// nombre d'exploratrices
-	
-	List<double[]> tabCoordsObstacle = new ArrayList<double[]>();
 	List<ArrayList<Ant>> tabAnt = new ArrayList<ArrayList<Ant>>();	//tableau qui contient toutes les fourmis
 	List<ArrayList<Track>> tabTracks = new ArrayList<ArrayList<Track>>();
 	List<Integer> tabWorkerOnTracks = new ArrayList<Integer>();
@@ -100,7 +98,7 @@ public class Player {
 	/**
 	 * @return the tabAnt
 	 */
-	public List<ArrayList<Ant>> gettabAnt() {
+	public List<ArrayList<Ant>> getTabAnt() {
 		return tabAnt;
 	}
 	
@@ -108,7 +106,7 @@ public class Player {
 	/**
 	 * @param tabAnt the tabAnt to set
 	 */
-	public void settabAnt(List<ArrayList<Ant>> tabAnt) {
+	public void setTabAnt(List<ArrayList<Ant>> tabAnt) {
 		this.tabAnt = tabAnt;
 	}
 	
