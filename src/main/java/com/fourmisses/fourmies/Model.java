@@ -40,8 +40,8 @@ public class Model {
 		}
 		
 		//création des instances
-		this.player1 = new Player( 0, 3, 0, 5, 1, coordColony1[0], coordColony1[1]);
-		this.player2 = new Player(0, 3, 0, 5, 1, coordColony2[0], coordColony2[1]);
+		this.player1 = new Player( 0, 3, 0, 1, 1, coordColony1[0], coordColony1[1]);
+		this.player2 = new Player(0, 3, 0, 1, 1, coordColony2[0], coordColony2[1]);
 
 //		this.tabObstacle.add(player1.getColony());
 //		this.tabObstacle.add(player2.getColony());
@@ -102,13 +102,19 @@ public class Model {
 	}
 	
 	void nextIteration(int tick) {
+		double random1 = Math.random()*15;
+		double random2 = Math.random()*15;
+
+		if(random1 > 14) player1.addWorker();
+		if(random2 > 14) player2.addWorker();
+
 		//calcul prochaine pos fourmis
 		player1.dispatchWorker();
 		
 		//calcul prochaine pos fourmis player2
 		player2.dispatchWorker();
 
-		if(tick%100 == 0) {
+		if(tick%10 == 0) {
 			player1.createTrack(tabFood);
 			player2.createTrack(tabFood);
 		}

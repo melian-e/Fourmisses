@@ -146,7 +146,10 @@ public class Player {
 		this.tabTracks = tabTracks;
 	}
 
-
+	public void addWorker() {
+		nbWorker+=1;
+		this.tabAnt.get(0).add(new Worker(colony.getX(), colony.getY(), 0,0,false,this.tabAnt.size(),100,100));
+	}
 	public int getDecompoTrackTot() {
 		this.decompoTrackTot = 1;
 
@@ -161,12 +164,10 @@ public class Player {
 		for(int j = 0; j < tabAnt.get(0).size(); j++) {
 			Ant ant = tabAnt.get(0).get(j);
 			if(ant.isOnTrack()) {
-				System.out.println("onTrack");
 				ant.followTrack();
 			}
 			else {
 				if(tabTracks.size()>0){
-					System.out.println("size>0");
 					double min = (tabWorkerOnTracks.get(0)/tabAnt.get(0).size())-(tabTracks.get(0).get(0).getDecompo()/decompoTrackTot);
 					int IDMin = 0;
 					for(int i = 1; i < tabTracks.size(); i++) {
@@ -185,6 +186,7 @@ public class Player {
 	}
 
 	public void createTrack(List<Food> tabFood){
+
 		double minVal = this.colony.dist(tabFood.get(0));
 		int id = 0;
 		for(int i = 1; i < tabFood.size(); i++){
